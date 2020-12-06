@@ -7,7 +7,6 @@
 44,108,There is a great lake 80 Grovnicks directly North. The Diamond lays in the castle further North from there.
 25,23, The Castle room 21 Grovnicks to the East is now a swamp. The Diamond is on an island 3 Grovnicks from the Western border.
 
-
 // First Quadrant
 51,127,Diamond
 72,76,Binoculars,750
