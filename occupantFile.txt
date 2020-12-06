@@ -133,7 +133,7 @@
 121,33,Food,Salad,1,1
 109,28,Food,Ham,14,60
 94,38,Food,Fried Rice,15,75 
-81,3,Treasure,25
+81,3,Treasure,250
 108,11,Treasure,50
 127,1,Treasure,1000
 80,13,Treasure,10
