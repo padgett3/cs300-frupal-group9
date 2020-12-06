@@ -95,7 +95,7 @@ void GameState::travel(int &direction, WINDOW *win) {
   if (theHero.energy() <= 0) {
     char response;
     do {
-      response = UI.popup(string("You ran out of energy and can no longer") +
+      response = UI.popup(string("You ran out of energy and can no longer ") +
                               "move! Game over. Press 'q' to quit. ",
                           vector<string>{});
     } while (response != 'q');
