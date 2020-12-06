@@ -1,20 +1,20 @@
 #ifndef CsvToOccupant_CLASS
 #define CsvToOccupant_CLASS
 
-#include <stdexcept>
+#include <fstream>
 #include <sstream>
+#include <stdexcept>
 #include <string>
 #include <vector>
-#include <fstream>
 
 #include "TileOccupant.h"
 
-using std::stringstream;
-using std::string;
 using std::getline;
-using std::stoi;
-using std::vector;
 using std::ifstream;
+using std::stoi;
+using std::string;
+using std::stringstream;
+using std::vector;
 
 TileOccupant *newOccupant(const string &type, const string &csv);
 

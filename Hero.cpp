@@ -5,128 +5,116 @@
 #include "Hero.h"
 using namespace std;
 
-//constructor
-Hero::Hero(){
-    hasBinoculars_ = false;
-    hasShip_ = false;
-    whiffles_ = 1000;
-    energy_ = 100;
+// constructor
+Hero::Hero() {
+  hasBinoculars_ = false;
+  hasShip_ = false;
+  whiffles_ = 1000;
+  energy_ = 100;
 }
 
-Hero::Hero(const  Hero & orig){
-    this->hasBinoculars_ = orig.hasBinoculars_;
-    this->hasShip_ = orig.hasShip_;
-    this->inventory_ = orig.inventory_;
-    this->whiffles_ = orig.whiffles_;
-    this->energy_ = orig.energy_;
+Hero::Hero(const Hero &orig) {
+  this->hasBinoculars_ = orig.hasBinoculars_;
+  this->hasShip_ = orig.hasShip_;
+  this->inventory_ = orig.inventory_;
+  this->whiffles_ = orig.whiffles_;
+  this->energy_ = orig.energy_;
 }
 
+vector<vector<string>> Hero::GetInventory() const {
+  vector<vector<string>> options;
 
-vector<vector<string>> Hero::GetInventory() const
-{
-    vector<vector<string>> options;
+  for (unsigned int i = 0; i < inventory_.size(); ++i) {
+    // Get the details of the
+    vector<string> details = inventory_.at(i)->getDetails();
 
-    for (unsigned int i = 0; i < inventory_.size(); ++i) {
-        // Get the details of the 
-        vector<string> details = inventory_.at(i)->getDetails();
+    // Put the name of the tool in the right column
+    details.at(details.size() / 2) = details.at(0);
 
-        // Put the name of the tool in the right column
-        details.at(details.size()/2) = details.at(0);
-        
-        // Set the left column to the choice for selecting it
-        details.at(0) = string(1, choiceIndexToChar(i));
+    // Set the left column to the choice for selecting it
+    details.at(0) = string(1, choiceIndexToChar(i));
 
-        // Add the details array to the array of details arrays
-        options.push_back(details);
+    // Add the details array to the array of details arrays
+    options.push_back(details);
+  }
+
+  return options;
+}
+
+// returns list of tools usable on Obstacle
+vector<Tool *> Hero::getUsableTools(Obstacle &current) {
+  vector<Tool *> usableTools_;
+
+  for (auto i = inventory_.cbegin(); i != inventory_.cend(); ++i) {
+    if ((*i)->usableOn(current)) {
+      usableTools_.push_back(*i);
     }
-    
-    return options;
-}
+  }
 
-
-//returns list of tools usable on Obstacle
-vector<Tool*> Hero::getUsableTools(Obstacle &current){
-    vector<Tool*> usableTools_;
- 
-    for(auto i = inventory_.cbegin(); i != inventory_.cend(); ++i){
-        if((*i)->usableOn(current)){
-        usableTools_.push_back(*i);
-        }
-    }
-
-    return usableTools_;
+  return usableTools_;
 }
 
 vector<vector<string>> Hero::getToolOptions(Obstacle &current) {
-    vector<Tool*> tools = getUsableTools(current);
-    vector<vector<string>> options;
+  vector<Tool *> tools = getUsableTools(current);
+  vector<vector<string>> options;
 
-    for (unsigned int i = 0; i < tools.size(); ++i) {
-        // Get the details of the 
-        vector<string> details = tools.at(i)->getDetails();
+  for (unsigned int i = 0; i < tools.size(); ++i) {
+    // Get the details of the
+    vector<string> details = tools.at(i)->getDetails();
 
-        // Put the name of the tool in the right column
-        details.at(details.size()/2) = details.at(0);
-        
-        // Set the left column to the choice for selecting it
-        details.at(0) = string(1, choiceIndexToChar(i));
+    // Put the name of the tool in the right column
+    details.at(details.size() / 2) = details.at(0);
 
-        // Add the details array to the array of details arrays
-        options.push_back(details);
+    // Set the left column to the choice for selecting it
+    details.at(0) = string(1, choiceIndexToChar(i));
+
+    // Add the details array to the array of details arrays
+    options.push_back(details);
+  }
+
+  return options;
+}
+
+void Hero::addInventory(Tool *toAdd) { inventory_.push_back(toAdd); }
+
+bool Hero::consumeTool(Tool *xtool) {
+  bool success = false;
+  auto end = inventory_.end();
+  for (auto i = inventory_.begin(); i != end; ++i) {
+    if (*i == xtool) {
+      inventory_.erase(i);
+      success = true;
     }
-   
-    return options; 
+  }
+  return success;
 }
 
-void Hero::addInventory(Tool * toAdd){
-    inventory_.push_back(toAdd);
+int Hero::addWhiffles(int value) {
+  whiffles_ += value;
+  return whiffles_;
 }
 
-bool Hero::consumeTool(Tool * xtool){
-    bool success = false;
-    auto end  = inventory_.end();
-    for(auto i = inventory_.begin(); i != end; ++i){
-        if(*i == xtool){
-            inventory_.erase(i);
-            success = true;
-        }
-    }
-    return success;
+int Hero::addEnergy(int value) {
+  energy_ += value;
+  return energy_;
 }
 
-int Hero::addWhiffles(int value){
-    whiffles_ += value;
-    return whiffles_;
+void Hero::setHasBinoculars(bool hasBinoculars) {
+  hasBinoculars_ = hasBinoculars;
 }
 
-int Hero::addEnergy(int value){
-    energy_ += value;
-    return energy_;
+void Hero::setHasShip(bool hasShip) { hasShip_ = hasShip; }
+
+// getter functions
+int Hero::visionRange(void) const {
+  if (hasBinoculars_)
+    return 2;
+  else
+    return 1;
 }
 
-void Hero::setHasBinoculars(bool hasBinoculars){
-    hasBinoculars_ = hasBinoculars;
-}
+bool Hero::hasShip(void) const { return hasShip_; }
 
-void Hero::setHasShip(bool hasShip) {
-    hasShip_ = hasShip;
-}
+int Hero::whiffles(void) const { return whiffles_; }
 
-//getter functions
-int Hero::visionRange(void) const{
-    if(hasBinoculars_) return 2;
-    else return 1;
-}
-
-bool Hero::hasShip(void) const{
-    return hasShip_;
-}
-
-int Hero::whiffles(void) const{
-    return whiffles_;
-}
-
-int Hero::energy(void) const{
-    return energy_;
-}
-
+int Hero::energy(void) const { return energy_; }

@@ -1,71 +1,64 @@
-#include "TileType.h"
-#include "TileOccupant.h"
 #include "Map.h"
 #include "CsvToOccupant.h"
+#include "TileOccupant.h"
+#include "TileType.h"
 #include <stdexcept>
 
-Tile::Tile() : revealed(false), type(0), occupant(0)
-{}
+Tile::Tile() : revealed(false), type(0), occupant(0) {}
 
-Tile::~Tile()
-{
-    if(type)
-        delete type;
-    if(occupant)
-        delete occupant;
+Tile::~Tile() {
+  if (type)
+    delete type;
+  if (occupant)
+    delete occupant;
 }
 
-Map::Map(string srcFile, int & heroX, int & heroY)
-{
-    //MaxScreenY = 0; //LINES
+Map::Map(string srcFile, int &heroX, int &heroY) {
+  // MaxScreenY = 0; //LINES
 
-    //The max we can go on the screen
-    //MenuBorder = 0; // MaxScreenX for frupal Map
-    
-    getmaxyx(stdscr,MaxScreenY,MenuBorder);
+  // The max we can go on the screen
+  // MenuBorder = 0; // MaxScreenX for frupal Map
 
-    MaxY = MaxScreenY;
-    if(MenuBorder > 170)
-        MenuBorder = MAPSIZE;
-    else
-        MenuBorder = MenuBorder - (3*MenuBorder/10);
+  getmaxyx(stdscr, MaxScreenY, MenuBorder);
 
-    MaxX = MenuBorder;
-    
-    MinX = 0;
-    MinY = 0;
+  MaxY = MaxScreenY;
+  if (MenuBorder > 170)
+    MenuBorder = MAPSIZE;
+  else
+    MenuBorder = MenuBorder - (3 * MenuBorder / 10);
 
-    if(!(loadFile(srcFile, heroX, heroY)))
-    {
-        throw runtime_error("File cannot open");
-    }
+  MaxX = MenuBorder;
 
-    if(!(loadOccupants("occupantFile.txt")))
-    {
-          throw runtime_error("File cannot open");
-    }
+  MinX = 0;
+  MinY = 0;
+
+  if (!(loadFile(srcFile, heroX, heroY))) {
+    throw runtime_error("File cannot open");
+  }
+
+  if (!(loadOccupants("occupantFile.txt"))) {
+    throw runtime_error("File cannot open");
+  }
 }
 
-//Read in the map
-bool Map::loadFile(string src, int & heroX, int & heroY)
-{
+// Read in the map
+bool Map::loadFile(string src, int &heroX, int &heroY) {
   string temp;
   int i = 0;
   int j = 0;
 
-  //if(read_file==0)
+  // if(read_file==0)
   ifstream infile;
-  //Open the designated file
-  //infile.open("practice.txt");
+  // Open the designated file
+  // infile.open("practice.txt");
   infile.open(src);
-    
-     //If file was open sucessfully then eneter
-  if(infile)
-  {
-    infile>>heroX;
-    infile.ignore(100,',');
-    infile>>heroY;
-    infile.ignore(100,'\n');
+
+  // If file was open sucessfully then eneter
+  if (infile) {
+    infile >> heroX;
+    infile.ignore(100, ',');
+    infile >> heroY;
+    infile.ignore(100, '\n');
 
     // If end of file is not triggered then enter the loop
     while (getline(infile, temp)) {
@@ -101,11 +94,10 @@ bool Map::loadFile(string src, int & heroX, int & heroY)
   } else {
     return false;
   }
-  
+
   return true; // placeholder for better things
 }
 
-        
 bool Map::loadOccupants(string src) {
   string temp;
 
@@ -115,7 +107,7 @@ bool Map::loadOccupants(string src) {
 
   if (fin) {
     // Convert the file to a vector of strings
-    vector<string> contents = inputFile(src); 
+    vector<string> contents = inputFile(src);
 
     // Remove empty lines and comments
     contents = cleanFile(contents);
@@ -124,7 +116,7 @@ bool Map::loadOccupants(string src) {
     int qty = stoi(contents[0]);
 
     for (int i = 1; i <= qty; ++i) {
-      // Convert line to stream 
+      // Convert line to stream
       stringstream thisLine(contents[i]);
 
       // Read coordinates of tileOccupant
@@ -141,9 +133,9 @@ bool Map::loadOccupants(string src) {
       getline(thisLine, temp);
 
       // If the tile already has an occupant, remove it.
-     
+
       // TODO: IDEALLY MAKE THIS WORK
-      //if (tileArray[row][col].occupant != 0)
+      // if (tileArray[row][col].occupant != 0)
       //  delete tileArray[row][col].occupant;
 
       tileArray[row][col].occupant = newOccupant(type, temp);
@@ -155,41 +147,38 @@ bool Map::loadOccupants(string src) {
   return true;
 }
 
-bool Map::saveFile(string dest, int heroX, int heroY)
-{
-    //Variable: Outfile
-    ofstream outfile;
-    //Open the data.txt files
-        outfile.open(dest);
-    //Clear what was in function
-        outfile.clear();
-    //Close the file
-    outfile.close();
-    //Reopen another file
-        outfile.open(dest, ios::app);
+bool Map::saveFile(string dest, int heroX, int heroY) {
+  // Variable: Outfile
+  ofstream outfile;
+  // Open the data.txt files
+  outfile.open(dest);
+  // Clear what was in function
+  outfile.clear();
+  // Close the file
+  outfile.close();
+  // Reopen another file
+  outfile.open(dest, ios::app);
 
-    outfile<<"Last Position of Hero: "<<heroX<<","<<heroY<<endl;
-    //Loop through list.
-    
-    for(int i=0;i<MAPSIZE;++i)
-    {
-        for(int j = 0; j<MAPSIZE; ++j)
-        {
-            if(tileArray[i][j].type->toString() == "Meadow")
-                outfile<<"G";
-            else if(tileArray[i][j].type->toString() == "Water")
-                outfile<<"W";
-            else if(tileArray[i][j].type->toString() == "Wall")
-                outfile<<"M";
-            else if(tileArray[i][j].type->toString() == "Swamp")
-                outfile<<"S";
-        }
-        outfile<<endl;
+  outfile << "Last Position of Hero: " << heroX << "," << heroY << endl;
+  // Loop through list.
+
+  for (int i = 0; i < MAPSIZE; ++i) {
+    for (int j = 0; j < MAPSIZE; ++j) {
+      if (tileArray[i][j].type->toString() == "Meadow")
+        outfile << "G";
+      else if (tileArray[i][j].type->toString() == "Water")
+        outfile << "W";
+      else if (tileArray[i][j].type->toString() == "Wall")
+        outfile << "M";
+      else if (tileArray[i][j].type->toString() == "Swamp")
+        outfile << "S";
     }
-    //Close the file
-        outfile.close();
+    outfile << endl;
+  }
+  // Close the file
+  outfile.close();
 
-    return true;
+  return true;
 }
 
 bool Map::saveOccupants(string dest) {
@@ -217,8 +206,7 @@ bool Map::saveOccupants(string dest) {
 
     for (unsigned int i = 0; i < occupants.size(); ++i) {
       fout << "\n"
-           << rows[i] << "," << cols[i] << ","
-           << occupants[i]->typeStr() << ","
+           << rows[i] << "," << cols[i] << "," << occupants[i]->typeStr() << ","
            << occupants[i]->dataAsCsv() << "\n";
     }
   } else {
@@ -241,21 +229,21 @@ void Map::tile_revealed(int row, int col) {
 }
 
 void Map::revealAll() {
-  for(int i = 0; i < MAPSIZE; ++i) {
-    for(int j = 0; j < MAPSIZE; ++j) {
+  for (int i = 0; i < MAPSIZE; ++i) {
+    for (int j = 0; j < MAPSIZE; ++j) {
       tileArray[i][j].revealed = true;
     }
   }
 }
 
 // Remove a tileOccupant, typicaly after it is bought/consumed/looted
-void Map::setOccupantAt(int col, int row, TileOccupant* newOccupant) {
-    TileOccupant *& temp = tileArray[row][col].occupant;
+void Map::setOccupantAt(int col, int row, TileOccupant *newOccupant) {
+  TileOccupant *&temp = tileArray[row][col].occupant;
 
-    if (temp)
-        delete temp;
+  if (temp)
+    delete temp;
 
-    temp = newOccupant;
+  temp = newOccupant;
 }
 
 // Can a ship be left on the tile at the provided coordinates
@@ -269,16 +257,16 @@ bool Map::isDebarkSafe(int col, int row) {
 
   // Check all adjacent tiles
   for (int i = 0; i < 9; ++i) {
-    int r = row + i%3 - 1;
-    int c = col + i/3 - 1;
+    int r = row + i % 3 - 1;
+    int c = col + i / 3 - 1;
 
-    if ((r >= 0) && (c >= 0) && (r < MAPSIZE) && (c < MAPSIZE) && 
+    if ((r >= 0) && (c >= 0) && (r < MAPSIZE) && (c < MAPSIZE) &&
         (r != row || c != col)) {
       if (tileTypeAt(c, r)->canEnter(withoutShip)) {
         // Allow ship debarking if even one adjacent tile is walkable.
         return true;
       }
-    } 
+    }
   }
 
   return false;
@@ -289,7 +277,7 @@ bool Map::isTileDiscovered(int col, int row) {
   if (tileArray[row][col].revealed) {
     return true;
   }
-  
+
   return false;
 }
 
@@ -308,10 +296,10 @@ void Map::displayMap(WINDOW *win) {
         if (tileArray[i][j].occupant != NULL &&
             tileArray[i][j].occupant->typeStr() == "Diamond") {
 
-          wattron(win,COLOR_PAIR(1));
+          wattron(win, COLOR_PAIR(1));
           mvwprintw(win, i - MinY, j - MinX, MarkerDisplay.data());
         } else {
-          wattron(win,COLOR_PAIR(tileArray[i][j].type->color()));
+          wattron(win, COLOR_PAIR(tileArray[i][j].type->color()));
 
           mvwprintw(win, i - MinY, j - MinX, MarkerDisplay.data());
         }
