@@ -1,4 +1,4 @@
-214
+216
 
 // First Quadrant
 51,127,Diamond
@@ -236,4 +236,6 @@
 28,121,Food,Ice-Cold Beer,30,65
 35,125,Food,Fried Rice,15,75
 49,123,Food,Donut,10,15
-4,119,Food,Donut,10,15
+40,119,Food,Donut,10,15
+21,124,Obstacle,Man-Eating Grue,15
+45,121,Obstacle,Man-Eating Grue,15
