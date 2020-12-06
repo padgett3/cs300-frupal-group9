@@ -12,57 +12,51 @@ Date: 2020-11-19
 
 class UserInterface {
 public:
-    // Starts the UI by creating all necessary windows/panels.
-	bool initialize(unsigned int width = WIDTH);
-    // Displays information on the side window.
-    void actions(std::vector<std::string> values);
-    void tileInspect(std::vector<std::string> values);
-    void whifflesEnergy(int whiffles, int energy);
-    // Opens a new panel to show the player inventory.
-    char displayInventory(
-        std::vector<std::vector<std::string>> tools,
-        bool getInput = false);
-    char popup(std::string msg);
-    char popup(std::string msg, std::vector<std::string> values);
-    char popup(std::string msg, std::vector<std::string> obstacle,
-        std::vector<std::vector<std::string>> values); 
+  // Starts the UI by creating all necessary windows/panels.
+  bool initialize(unsigned int width = WIDTH);
+  // Displays information on the side window.
+  void actions(std::vector<std::string> values);
+  void tileInspect(std::vector<std::string> values);
+  void whifflesEnergy(int whiffles, int energy);
+  // Opens a new panel to show the player inventory.
+  char displayInventory(std::vector<std::vector<std::string>> tools,
+                        bool getInput = false);
+  char popup(std::string msg);
+  char popup(std::string msg, std::vector<std::string> values);
+  char popup(std::string msg, std::vector<std::string> obstacle,
+             std::vector<std::vector<std::string>> values);
 
 private:
-    const char CTRL_UP = 'i';
-    const char CTRL_DOWN = 'k';
-    const char CTRL_INV = 'h';
-    // The minimum screensize allowed by the UI.
-    const int MINY = 20;
-    const int MINX = 80;
-    const static unsigned int WIDTH = 24;
-    // The border characters.
-    const char BVER = '#';
-    const char BHOR = '=';
-    // Titles for each of the sections.
-    const std::string LABEL_Whiffles = "Whiffles";
-    const std::string LABEL_Energy = "Energy";
-    const std::string LABEL_Actions = "~Actions~";
-    const std::string LABEL_Inspect = "~Inspect~";
+  const char CTRL_UP = 'i';
+  const char CTRL_DOWN = 'k';
+  const char CTRL_INV = 'h';
+  // The minimum screensize allowed by the UI.
+  const int MINY = 20;
+  const int MINX = 80;
+  const static unsigned int WIDTH = 24;
+  // The border characters.
+  const char BVER = '#';
+  const char BHOR = '=';
+  // Titles for each of the sections.
+  const std::string LABEL_Whiffles = "Whiffles";
+  const std::string LABEL_Energy = "Energy";
+  const std::string LABEL_Actions = "~Actions~";
+  const std::string LABEL_Inspect = "~Inspect~";
 
-    void clearInspect();
-    // Popup helpers
-    void openPop();
-    void closePop();
+  void clearInspect();
+  // Popup helpers
+  void openPop();
+  void closePop();
 
-    // Printing Functions
-    void printTitle(
-        WINDOW *win, 
-        int ypos, int hor_offset,
-        std::string title);
-    void printDualCol(
-        WINDOW *win,
-        int ver_offset, int hor_offset,
-        std::vector<std::string> values); 
+  // Printing Functions
+  void printTitle(WINDOW *win, int ypos, int hor_offset, std::string title);
+  void printDualCol(WINDOW *win, int ver_offset, int hor_offset,
+                    std::vector<std::string> values);
 
-    // Windows and Panels
-	WINDOW *info, *inven, *pop;
-    WINDOW *bmain, *bpop;
-    PANEL *pbmain, *pinfo, *pinven, *pbpop, *ppop;
+  // Windows and Panels
+  WINDOW *info, *inven, *pop;
+  WINDOW *bmain, *bpop;
+  PANEL *pbmain, *pinfo, *pinven, *pbpop, *ppop;
 };
 
 #endif
