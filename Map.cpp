@@ -22,7 +22,7 @@ Map::Map(string srcFile, int &heroX, int &heroY) {
   getmaxyx(stdscr, MaxScreenY, MenuBorder);
 
   MaxY = MaxScreenY;
-  if (MenuBorder > 170)
+  if (MenuBorder > 182)
     MenuBorder = MAPSIZE;
   else
     MenuBorder = MenuBorder - (3 * MenuBorder / 10);
