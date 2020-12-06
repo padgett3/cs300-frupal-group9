@@ -10,22 +10,22 @@
 // Dock
 69,97,Food,Donut,8,50
 78,118,Food,Fried Rice,15,75
-71,104,Food,Ice-Cold Beer,30,100
+71,104,Food,Ice-Cold Beer,30,65
 90,92,Food,Donut,8,50
 103,95,Food,Fried Rice,15,75
-81,81,Food,Ice-Cold Beer,30,100
+81,81,Food,Ice-Cold Beer,30,65
 92,82,Food,Ham,14,60
 102,114,Food,Donut,8,50
 76,99,Food,Fried Rice,15,75
-82,93,Food,Ice-Cold Beer,30,100
+82,93,Food,Ice-Cold Beer,30,65
 98,87,Food,Ham,14,60
 97,74,Food,Donut,8,50
 107,71,Food,Fried Rice,15,75
-117,102,Food,Ice-Cold Beer,30,100
+117,102,Food,Ice-Cold Beer,30,65
 100,103,Food,Ham,14,60
 114,94,Food,Donut,8,50
 115,79,Food,Fried Rice,15,75
-79,70,Food,Ice-Cold Beer,30,100
+79,70,Food,Ice-Cold Beer,30,65
 79,109,Food,Ham,14,60
 110,85,Treasure,25
 94,99,Treasure,25
@@ -51,7 +51,7 @@
 119,81,Obstacle,Tiger of the East,40
 124,87,Treasure,200
 125,86,Treasure,50
-122,87,Food,Ice-Cold Beer,30,100
+122,87,Food,Ice-Cold Beer,30,65
 125,84,Food,Ham,14,60
 124,87,Tool,Handful of Salt,50,10,1,Passive-Agressive Slugs
 85,101,Treasure,50
@@ -86,11 +86,11 @@
 108,57,Treasure,500
 98,69,Tool,Handful of Salt,50,10,1,Passive-Agressive Slugs
 91,57,Food,Fried Rice,15,75
-96,63,Food,Ice-Cold Beer,30,100
+96,63,Food,Ice-Cold Beer,30,65
 115,66,Food,Ham,14,60
 118,55,Food,Donut,8,50
 108,48,Food,Fried Rice,15,75
-118,46,Food,Ice-Cold Beer,30,100
+118,46,Food,Ice-Cold Beer,30,65
 113,36,Food,Ham,14,60
 101,41,Food,Donut,8,50
 104,62,Treasure,50
@@ -124,10 +124,10 @@
 103,17,Tool,bazooka,100,30,4,boulder,fence,Passive-Agressive Slugs,Tree
 100,10,Tool,Tiger Sleeping Potion,100,20,5,Tiger of Frupal,Tiger of the North,Tiger of the East,Tiger of the South,Tiger of the West
 117,51,Tool,Clay-Transform Potion,100,6,1,Snake Pile,Passive-Aggressive Slugs 
-92,51,Food,Ice-Cold Beer,30,100
-101,25,Food,Ice-Cold Beer,30,100
+92,51,Food,Ice-Cold Beer,30,65
+101,25,Food,Ice-Cold Beer,30,65
 89,12,Food,Fried Rice,15,75
-105,9,Food,Senzu Bean,75,500
+105,9,Food,Senzu Bean,75,100
 84,3,Food,Fried Rice,15,75
 86,37,Food,Donut,10,15
 121,33,Food,Salad,1,1
@@ -147,10 +147,10 @@
 57,22,Tool,Clay-Transform Potion,100,6,1,Snake Pile,Passive-Aggressive Slugs
 41,51,Tool,Torch,75,3,1,Man-Eating Grue
 33,51,Tool,Torch,75,3,1,Man-Eating Grue 
-19,12,Food,Ice-Cold Beer,30,100
-17,38,Food,Ice-Cold Beer,30,100
+19,12,Food,Ice-Cold Beer,30,65
+17,38,Food,Ice-Cold Beer,30,65
 18,38,Food,Fried Rice,15,75
-64,17,Food,Senzu Bean,75,500
+64,17,Food,Senzu Bean,75,100
 21,56,Food,Fried Rice,15,75
 53,10,Food,Donut,10,15
 11,48,Food,Salad,1,1
@@ -182,13 +182,13 @@
 
 
 //West Swamp 
-40,63,Food,Ice-Cold Beer,30,100
+40,63,Food,Ice-Cold Beer,30,65
 34,55 ,Food,Fried Rice,15,75
 53,81,Food,Fried Rice,15,75
 45,86,Food,Fried Rice,15,75
 40,92,Food,Donut,10,15
 29,89,Food,Donut,10,15
-10,60,Food,Ice-Cold Beer,30,100
+10,60,Food,Ice-Cold Beer,30,65
 5,77,Food,Fried Rice,15,75
 50,62,Food,Fried Rice,15,75
 35,74,Food,Fried Rice,15,75
@@ -211,11 +211,11 @@
 
 //Village
 3,49,Treasure,250
-18,103,Food,Ice-Cold Beer,30,100
+18,103,Food,Ice-Cold Beer,30,65
 36,99,Food,Fried Rice,15,75
 23,114,Food,Fried Rice,15,75
 45,108,Food,Donut,10,15
-19,103,Food,Ice-Cold Beer,30,100
+19,103,Food,Ice-Cold Beer,30,65
 25,95,Food,Fried Rice,15,75
 46,93,Food,Fried Rice,15,75
 58,80,Food,Donut,10,15
@@ -233,7 +233,7 @@
 51,127,Diamond
 36,119,Obstacle,The Indestructible Door,50
 20,117,Obstacle,Tiger of the South,80
-28,121,Food,Ice-Cold Beer,30,100
+28,121,Food,Ice-Cold Beer,30,65
 35,125,Food,Fried Rice,15,75
 49,123,Food,Donut,10,15
 4,119,Food,Donut,10,15
