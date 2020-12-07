@@ -1,7 +1,7 @@
 220
 
 //clues
-91,65,Clue,There are wall 5 Grovnicks to the South and a swamp 17 Grovnicks West. The Diamond lays on the Southern border to the West of here.
+91,65,Clue,There is a wall 5 Grovnicks to the South and a swamp 17 Grovnicks West. The Diamond lays on the Southern border to the West of here.
 106,11,Clue,There is a sawmp 10 Grovnicks South and 5 Grovnicks East. Hero you are near the Diamond on the island to the Northeast.
 50,22,Clue,There is a wall 8 Grovnicks to the West. There is a lake 4 Grovnicks North. The Diamond is directly South 105 Grovnicks.
 44,108,Clue,There is a great lake 80 Grovnicks directly North. The Diamond lays in the castle further North from there.
