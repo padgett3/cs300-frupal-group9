@@ -12,7 +12,7 @@ The map file is included and run by default.
 
 The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
 
-Map png is within the repo.
+Map png(Frupal2.png) is within the repo.
 
 
 ### How to Play
