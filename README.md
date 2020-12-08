@@ -1,5 +1,6 @@
-# CS 300 Final Project (Group9) - Kingdom of Frupal
-Drew McKinney, Thomas Abel, Jacob Padgett, Joseph Brower, Mohamed-Amin Cheaito
+# CS 300 Final Project - Kingdom of Frupal
+
+## Group 9 : Drew McKinney, Thomas Abel, Jacob Padgett, Joseph Brower, Mohamed-Amin Cheaito
 
 ### How to Compile & Run the Game
 
