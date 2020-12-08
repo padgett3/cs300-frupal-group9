@@ -42,6 +42,7 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
   D: South
 
   F: East
+  
 
 2. Inspect cursor movement
 
@@ -52,12 +53,14 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
   K: South
   
   L: East
+  
 
 3. Options
 
   H: Browse inventory
 
   Q: Quit game
+  
 
 4. Inventory/Tool selection
 
