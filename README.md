@@ -34,6 +34,7 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
 ### Controls
 
 1. Hero movement
+
   E: North
 
   S: West
