@@ -34,28 +34,37 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
 ### Controls
 
 1. Hero movement
-E: North
+  E: North
 
-S: West
+  S: West
 
-D: South
+  D: South
 
-F: East
+  F: East
 
 2. Inspect cursor movement
-I: North
-J: West
-K: South
-L: East
+
+  I: North
+  
+  J: West
+  
+  K: South
+  
+  L: East
 
 3. Options
-H: Browse inventory
-Q: Quit game
+
+  H: Browse inventory
+
+  Q: Quit game
 
 4. Inventory/Tool selection
-I: Scroll up
-K: Scroll down
-H: Exit inventory
+
+  I: Scroll up
+  
+  K: Scroll down
+  
+  H: Exit inventory
 
 
 
