@@ -35,7 +35,7 @@ Map png(Frupal2.png) is within the repo.
 
 ### Controls
 
-1. Hero movement
+1. Inspect cursor movement
 
   E: North
 
@@ -46,7 +46,7 @@ Map png(Frupal2.png) is within the repo.
   F: East
   
 
-2. Inspect cursor movement
+2. Hero movement
 
   I: North
   
