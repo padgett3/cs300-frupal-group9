@@ -595,12 +595,12 @@ Return:		string - message to display
 string Binoculars::promptMsg(Hero &theHero) {
   string msg;
 
-  msg = "Binoculars found!\n";
+  msg = "Binoculars found!";
   if (theHero.whiffles() >= whiffleCost_) {
-    msg = msg + "Buy Binoculars and double your " + "vision for " +
+    msg = msg + " Buy Binoculars and double your " + "vision for " +
           to_string(whiffleCost_) + " Whiffles? (Y/N):";
   } else {
-    msg = msg + "But you don't have enough Whiffles! " + "Sorry!";
+    msg = msg + " But you don't have enough Whiffles! " + "Sorry!";
   }
   return msg;
 }

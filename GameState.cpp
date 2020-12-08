@@ -90,6 +90,17 @@ void GameState::travel(int &direction, WINDOW *win) {
   }
   wmove(win, cursorY, cursorX);
   wrefresh(win);
+  
+  // End the game if the Hero is out of energy.
+  if (theHero.energy() <= 0) {
+    char response;
+    do {
+      response = UI.popup(string("You ran out of energy and can no longer ") +
+                              "move! Game over. Press 'q' to quit. ",
+                          vector<string>{});
+    } while (response != 'q');
+    direction = 'q';
+  }
 }
 
 // The hero traveling
@@ -204,7 +215,7 @@ bool GameState::occupantCheck(int &direction) {
   TileOccupant *occ = map.occupantAt(r, c);
 
   bool debarkShip = (theHero.hasShip() && map.isDebarkSafe(r, c));
-
+  /*
   // End the game if the Hero is out of energy.
   if (theHero.energy() <= 0) {
     char response;
@@ -216,6 +227,7 @@ bool GameState::occupantCheck(int &direction) {
     direction = 'q';
     return false;
   }
+  */
 
   // Not NULL, we have an occupant
   if (occ) {

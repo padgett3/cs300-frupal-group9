@@ -1,4 +1,11 @@
-216
+220
+
+//clues
+91,65,Clue,There is a wall 5 Grovnicks to the South and a swamp 17 Grovnicks West. The Diamond lays on the Southern border to the West of here.
+106,11,Clue,There is a sawmp 10 Grovnicks South and 5 Grovnicks East. Hero you are near the Diamond on the island to the Northeast.
+50,22,Clue,There is a wall 8 Grovnicks to the West. There is a lake 4 Grovnicks North. The Diamond is directly South 105 Grovnicks.
+44,108,Clue,There is a great lake 80 Grovnicks directly North. The Diamond lays in the castle further North from there.
+25,23,Clue,The Castle room 21 Grovnicks to the East is now a swamp. The Diamond is on an island 3 Grovnicks from the Western border.
 
 // First Quadrant
 51,127,Diamond
@@ -133,7 +140,7 @@
 121,33,Food,Salad,1,1
 109,28,Food,Ham,14,60
 94,38,Food,Fried Rice,15,75 
-81,3,Treasure,250
+81,3,Treasure,25
 108,11,Treasure,50
 127,1,Treasure,1000
 80,13,Treasure,10
@@ -236,6 +243,4 @@
 28,121,Food,Ice-Cold Beer,30,65
 35,125,Food,Fried Rice,15,75
 49,123,Food,Donut,10,15
-40,119,Food,Donut,10,15
-21,124,Obstacle,Man-Eating Grue,15
-45,121,Obstacle,Man-Eating Grue,15
+4,119,Food,Donut,10,15
