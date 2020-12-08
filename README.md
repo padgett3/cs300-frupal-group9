@@ -9,7 +9,9 @@
 3. Play the game by running the [./frupal] command.
 
 The map file is included and run by default.
+
 The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
+
 Map png is within the repo.
 
 
