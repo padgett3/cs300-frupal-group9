@@ -1,7 +1,7 @@
 # CS 300 Final Project (Group9) - Kingdom of Frupal
 
 
-~How to Compile & Run the Game~
+### How to Compile & Run the Game
 
 1. Copy the files into a directory of your choice and navigate to that directory.
 2. Compile the program by running the [make] command.
@@ -12,7 +12,7 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
 
 
 
-~How to Play~
+### How to Play
 
 1. You play as the Hero looking for the Royal Diamonds of Frupal.
 2. The kingdom is split into two halves by a river through the center, flowing north to south. A bridge connects the eastern and western halves and water surrounds the entire kingdom.
@@ -20,7 +20,7 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
 4. On the western side to the north is the Royal Castle of Frupal. Many dangers, and many treasures, await inside. To the south is the village that has its own secrets.
 5. There are many clues that hint at the location of the Royal Diamonds. Some may be true, but others may not.
 
-~Tips~
+### Tips
 
 1. The Hero starts with only 100 energy and it requires 1 energy to move to a meadow grovenik. Always be aware of your energy and buy as much food as you can find.
 2. The binoculars are close to the starting position but cost quite a bit of whiffles. You may choose to purchase them immediately to make exploration easier, or wait a bit to gather some resources.
@@ -30,7 +30,7 @@ The minimum sized terminal allowed to run the game is 80 columns by 24 rows.
 
 
 
-~Controls~
+### Controls
 
 1. Hero movement
 E: North
@@ -55,7 +55,7 @@ H: Exit inventory
 
 
 
-~Features~
+### Features
 
 All of the main features of the game were implemented, including: whiffles, energy, exploration, tile types, tools, obstacles, food, treasure, clues, ships, binoculars, diamonds, and a user interface system. The ship was implemented in an interesting way in that it can only be used on water and once the Hero leaves the water the ship is left behind. The map was designed by hand, both the types of tiles and the items strewn about. The user interface was designed to be useable at the minimum resolution, but it can be upscaled to any arbitrary size without issue. All major bugs were fixed.
 
@@ -63,7 +63,7 @@ We were originally planning on attempting the stretch goals, but we quickly real
 
 
 
-~Links~
+### Links
 
 1. Requirements - https://docs.google.com/document/d/1eO3Qxe4bGjRmtbw9keGfjp54r2aGr8LwUNp9Xk3Etuc/edit?usp=sharing
 2. Controls - https://docs.google.com/document/d/1Ynmvcy1JkCGKl10r9R4XyHOqnYAbeUh9D1fvDPeDUaY/edit?usp=sharing
